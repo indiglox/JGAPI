@@ -159,6 +159,27 @@ This project follows several API testing best practices:
 
 ## Troubleshooting
 
+### Known Issues
+Currently, some tests are failing due to the API not returning the proper error status codes. Specifically:
+
+```
+9 failed
+[API] › tests\specs\create.spec.ts:32:7 › Create API - Pets Resource › Create Pet - Missing Required Fields - photoUrls - POST /pet
+[API] › tests\specs\create.spec.ts:58:7 › Create API - Pets Resource › Create Pet - Invalid Data Types - POST /pet
+[API] › tests\specs\create.spec.ts:84:7 › Create API - Pets Resource › Create Pet - Duplicate Pet ID - POST /pet
+[API] › tests\specs\delete.spec.ts:15:7 › Delete API - Pets Resource › Delete Pet - Invalid ID - DELETE /pet
+[API] › tests\specs\read.spec.ts:41:9 › Read API - Pets Resource › Retrieve Pet with Invalid ID Format - GET /pet/{petId}
+[API] › tests\specs\read.spec.ts:61:9 › Read API - Pets Resource › Retrieve Pets by Invalid Status - GET /pet/findByStatus
+[API] › tests\specs\update.spec.ts:22:7 › Update API - Pets Resource › Update Pet - Invalid ID - PUT /pet
+[API] › tests\specs\update.spec.ts:30:7 › Update API - Pets Resource › Update Pet - Missing Required Fields - PUT /pet
+[API] › tests\specs\update.spec.ts:46:7 › Update API - Pets Resource › Update Pet - Pet not found - PUT /pet
+```
+
+#### What’s happening?
+The Pet Store API is not returning the expected HTTP status codes for certain operations, causing these tests to fail. For example:
+- Creating a pet with invalid data doesn’t return a 400 Bad Request
+- Updating a non-existent pet doesn’t return a 404 Not Found
+- 
 ### Common Issues
 
 1. **Missing Dependencies**: If tests fail to run, ensure you’ve installed all dependencies.
