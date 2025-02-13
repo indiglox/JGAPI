@@ -1,6 +1,6 @@
 # 🐾 Pet Store API Testing Project
 
-A comprehensive API testing suite for the Petstore Swagger API built with Playwright. This project showcases API testing best practices with a focus on CRUD operations. Whether you're just starting out with API testing or looking to level up your existing skills, this project provides a solid foundation to work from.
+A comprehensive API testing suite for the Petstore Swagger API built with Playwright. This project showcases API testing best practices with a focus on CRUD operations.
 
 ## Table of Contents
 
