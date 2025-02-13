@@ -179,7 +179,7 @@ Currently, some tests are failing due to the API not returning the proper error 
 The Pet Store API is not returning the expected HTTP status codes for certain operations, causing these tests to fail. For example:
 - Creating a pet with invalid data doesn’t return a 400 Bad Request
 - Updating a non-existent pet doesn’t return a 404 Not Found
-- 
+  
 ### Common Issues
 
 1. **Missing Dependencies**: If tests fail to run, ensure you’ve installed all dependencies.
